@@ -10,28 +10,40 @@ import (
 )
 
 type AppVer struct {
-	AppId string `json:"appId""`
-	Ver   string `json:"ver""`
+	AppId string `json:"appId"`
+	Ver   string `json:"ver"`
 	Url   string `json:"url"`
 	Hash  string `json:"hash"`
 }
+type MKTVersions []AppVer
 
 type filterFunc func(AppVer) bool
+type findFunc func(AppVer) bool
 
-type MKTVersions []AppVer
 
 var mktVers MKTVersions
 
-func (vers MKTVersions) filter(predict filterFunc) []AppVer {
-	filtered := make([]AppVer, len(vers))
+func (vers *MKTVersions) filter(predict filterFunc) []AppVer {
+	filtered := make([]AppVer, len(*vers))
 	var last int
-	for i, v := range vers {
+	for i, v := range *vers {
 		if match := predict(v); match {
 			filtered[i] = v
 			last++
 		}
 	}
 	return filtered[0:last]
+}
+
+func (vers *MKTVersions) find(predict findFunc)(found *AppVer) {
+	for _, v := range *vers {
+		if match := predict(v); match {
+			found = &v
+			break
+		}
+	}
+
+	return
 }
 
 func handlerDefault(w http.ResponseWriter, r *http.Request) {
@@ -57,11 +69,15 @@ func handlerCheck(w http.ResponseWriter, r *http.Request) {
 
 	/// todo 考虑增加 mkt+ver的filter结果缓存并使其并发安全
 
-	filtered := mktVers.filter(func(item AppVer) bool {
+	found := mktVers.find(func(item AppVer) bool {
 		return item.Ver == ver
 	})
 
-	data, err := json.Marshal(filtered)
+	if nil == found {
+		w.WriteHeader(404)
+		return
+	}
+	data, err := json.Marshal(found)
 	if err != nil {
 		log.Fatalf("JSON marshaling faild: %s", err)
 	}
