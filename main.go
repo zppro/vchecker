@@ -22,6 +22,7 @@ type findFunc func(AppVer) bool
 
 
 var mktVers MKTVersions
+var cache *FilterCache
 
 func (vers *MKTVersions) filter(predict filterFunc) []AppVer {
 	filtered := make([]AppVer, len(*vers))
@@ -66,24 +67,29 @@ func handlerCheck(w http.ResponseWriter, r *http.Request) {
 		ver = "latest"
 	}
 
+	key := fmt.Sprintf("%s_%s", appId, ver)
+	value, ok := cache.Get(key)
+	if !ok {
+		value = mktVers.find(func(item AppVer) bool {
+			return item.Ver == ver
+		})
+		cache.set(key, value)
+	}
 
-	/// todo 考虑增加 mkt+ver的filter结果缓存并使其并发安全
+	toJson(w, value)
+}
 
-	found := mktVers.find(func(item AppVer) bool {
-		return item.Ver == ver
-	})
-
-	if nil == found {
+func toJson (w http.ResponseWriter, item *AppVer) {
+	if nil == item {
 		w.WriteHeader(404)
 		return
 	}
-	data, err := json.Marshal(found)
+	data, err := json.Marshal(item)
 	if err != nil {
-		log.Fatalf("JSON marshaling faild: %s", err)
+		log.Printf("JSON marshaling faild: %s\n", err)
 	}
 	w.Header().Set("Content-Type", "application/json;charset=UTF-8")
 	w.Write(data)
-	//fmt.Fprint(w, data)
 }
 
 func isFileExist(filename string) bool {
@@ -117,6 +123,7 @@ func readAppVersFromFile(appId string) {
 
 func main() {
 	readAppVersFromFile("mkt")
+	cache = NewFilterCache()
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handlerDefault)
 	mux.HandleFunc("/check", handlerCheck)
