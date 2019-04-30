@@ -1,27 +1,28 @@
-package main
+package vchecker
 
 import (
 	"fmt"
 	"sync"
+	"github.com/zppro/vchecker/internal/pkg/shared"
 )
 
 type FilterCache struct {
 	mu sync.RWMutex
-	cache map[string] *AppVer
+	cache map[string] *shared.AppVer
 }
 
 func NewFilterCache () *FilterCache {
-	return &FilterCache{cache:make(map[string] *AppVer)}
+	return &FilterCache{cache:make(map[string] *shared.AppVer)}
 }
 
-func (fc *FilterCache) Get(key string) (value *AppVer, ok bool) {
+func (fc *FilterCache) Get(key string) (value *shared.AppVer, ok bool) {
 	fc.mu.RLock()
 	value, ok = fc.cache[key]
 	fc.mu.RUnlock()
 	return
 }
 
-func (fc *FilterCache) set(key string, value *AppVer) {
+func (fc *FilterCache) Set(key string, value *shared.AppVer) {
 	fc.mu.Lock()
 	defer fc.mu.Unlock()
 	fc.cache[key] = value

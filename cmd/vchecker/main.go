@@ -7,45 +7,13 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"github.com/zppro/vchecker/internal/pkg/shared"
+	"github.com/zppro/vchecker/internal/pkg/vchecker"
 )
 
-type AppVer struct {
-	AppId string `json:"appId"`
-	Ver   string `json:"ver"`
-	Url   string `json:"url"`
-	Hash  string `json:"hash"`
-}
-type MKTVersions []AppVer
 
-type filterFunc func(AppVer) bool
-type findFunc func(AppVer) bool
-
-
-var mktVers MKTVersions
-var cache *FilterCache
-
-func (vers *MKTVersions) filter(predict filterFunc) []AppVer {
-	filtered := make([]AppVer, len(*vers))
-	var last int
-	for i, v := range *vers {
-		if match := predict(v); match {
-			filtered[i] = v
-			last++
-		}
-	}
-	return filtered[0:last]
-}
-
-func (vers *MKTVersions) find(predict findFunc)(found *AppVer) {
-	for _, v := range *vers {
-		if match := predict(v); match {
-			found = &v
-			break
-		}
-	}
-
-	return
-}
+var mktVers shared.AppVersions
+var cache *vchecker.FilterCache
 
 func handlerDefault(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "hello => %s", r.URL.Path)
@@ -70,16 +38,16 @@ func handlerCheck(w http.ResponseWriter, r *http.Request) {
 	key := fmt.Sprintf("%s_%s", appId, ver)
 	value, ok := cache.Get(key)
 	if !ok {
-		value = mktVers.find(func(item AppVer) bool {
+		value = mktVers.Find(func(item shared.AppVer) bool {
 			return item.Ver == ver
 		})
-		cache.set(key, value)
+		cache.Set(key, value)
 	}
 
 	toJson(w, value)
 }
 
-func toJson (w http.ResponseWriter, item *AppVer) {
+func toJson (w http.ResponseWriter, item *shared.AppVer) {
 	if nil == item {
 		w.WriteHeader(404)
 		return
@@ -123,9 +91,9 @@ func readAppVersFromFile(appId string) {
 
 func main() {
 	readAppVersFromFile("mkt")
-	cache = NewFilterCache()
+	cache = vchecker.NewFilterCache()
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handlerDefault)
 	mux.HandleFunc("/check", handlerCheck)
-	http.ListenAndServe(":8081", mux)
+	http.ListenAndServe(":8083", mux)
 }

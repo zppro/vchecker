@@ -1,20 +1,35 @@
 [
   {
     "appId": "vchecker",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
     "ver": "latest",
-    "url": "http://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-latest.min.js",
-    "hash": "hash"
+    "data": {
+      "url": "http://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-latest.min.js",
+      "hash": "hash"
+    }
   },
   {
     "appId": "vchecker",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
     "ver": "stable",
-    "url": "http://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-stable.min.js",
-    "hash": "hash"
+    "data": {
+      "url": "http://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-stable.min.js",
+      "hash": "hash"
+    }
   },
   {
     "appId": "vchecker",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
     "ver": "0.7.4",
-    "url": "http://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.7.4.min.js",
-    "hash": "hash"
+    "data": {
+      "url": "http://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.7.4.min.js",
+      "hash": "hash"
+    }
   }
 ]
