@@ -3,16 +3,18 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/zppro/go-common/file"
+	"github.com/zppro/vchecker/internal/pkg/shared"
+	"github.com/zppro/vchecker/internal/pkg/vchecker"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
-	"github.com/zppro/vchecker/internal/pkg/shared"
-	"github.com/zppro/vchecker/internal/pkg/vchecker"
 )
 
 
-var mktVers shared.AppVersions
+//var mktVers shared.AppVersions
+var appVerMap map[string]shared.AppVersions
 var cache *vchecker.FilterCache
 
 func handlerDefault(w http.ResponseWriter, r *http.Request) {
@@ -29,17 +31,30 @@ func handlerCheck(w http.ResponseWriter, r *http.Request) {
 	if appId == "" {
 		appId = "mkt"
 	}
-
+	var appVersions = appVerMap[appId]
+	if len(appVersions) == 0 {
+		w.WriteHeader(400)
+		fmt.Fprint(w, "无效的appId")
+		return
+	}
+	biz := r.URL.Query().Get("biz")
+	if biz == "" {
+		biz = "all"
+	}
+	stage := r.URL.Query().Get("stage")
+	if stage == "" {
+		stage = "prod"
+	}
 	ver := r.URL.Query().Get("ver")
 	if ver == "" {
 		ver = "latest"
 	}
 
-	key := fmt.Sprintf("%s_%s", appId, ver)
+	key := fmt.Sprintf("%s_%s_%s_%s", appId, biz, stage, ver)
 	value, ok := cache.Get(key)
 	if !ok {
-		value = mktVers.Find(func(item shared.AppVer) bool {
-			return item.Ver == ver
+		value = appVersions.Find(func(item shared.AppVer) bool {
+			return item.Biz == biz && item.Stage == stage && item.Ver == ver
 		})
 		cache.Set(key, value)
 	}
@@ -69,28 +84,37 @@ func isFileExist(filename string) bool {
 	return true
 }
 
-func readAppVersFromFile(appId string) {
-	filename := fmt.Sprintf("./%s-ver.json", appId)
-	if !isFileExist(filename) {
-		log.Fatalf("文件%s 不存在", filename)
-		return
-	}
+func readAppVersFromFile() {
+	pattern := []string{`(?U)([a-z]+)\.json$`}
+	fileExtInfos := file.GetAllFileExtInfo("./assets", pattern)
+	appVerMap = make(map[string]shared.AppVersions, len(fileExtInfos))
+	for _, v := range fileExtInfos {
+		filename := v.FullName()
+		if !isFileExist(filename) {
+			log.Fatalf("文件%s 不存在", filename)
+			return
+		}
 
-	data, err := ioutil.ReadFile(filename)
-	if err != nil {
-		log.Fatalf("读取文件%s faild: %s", filename, err)
-		return
-	}
-	//读取的数据为json格式，需要进行解码
-	err = json.Unmarshal(data, &mktVers)
-	if err != nil {
-		log.Fatalf("JSON Unmarshal faild: %s", err)
-		return
+		data, err := ioutil.ReadFile(filename)
+		if err != nil {
+			log.Fatalf("读取文件%s faild: %s", filename, err)
+			return
+		}
+
+		var ptr = new(shared.AppVersions)
+		//读取的数据为json格式，需要进行解码
+		err = json.Unmarshal(data, ptr)
+		if err != nil {
+			log.Fatalf("JSON Unmarshal faild: %s", err)
+			return
+		}
+		key := v.Reg.ReplaceAllString(v.Name(), "$1")
+		appVerMap[key] = *ptr
 	}
 }
 
 func main() {
-	readAppVersFromFile("mkt")
+	readAppVersFromFile()
 	cache = vchecker.NewFilterCache()
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handlerDefault)

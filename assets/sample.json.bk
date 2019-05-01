@@ -7,6 +7,7 @@
     "ver": "latest",
     "data": {
       "url": "http://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-latest.min.js",
+      "size": 49999,
       "hash": "hash"
     }
   },
@@ -18,6 +19,7 @@
     "ver": "stable",
     "data": {
       "url": "http://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-stable.min.js",
+      "size": 49999,
       "hash": "hash"
     }
   },
@@ -29,6 +31,7 @@
     "ver": "0.7.4",
     "data": {
       "url": "http://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.7.4.min.js",
+      "size": 49999,
       "hash": "hash"
     }
   }

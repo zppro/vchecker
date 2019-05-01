@@ -1,0 +1,578 @@
+[
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "0.6.3",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.6.3.min.js",
+      "size": 175007,
+      "hash": "208746f88e1551929d467b86aa0bbdd048e9ccf6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "0.6.3",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-0.6.3.min.js",
+      "size": 175007,
+      "hash": "208746f88e1551929d467b86aa0bbdd048e9ccf6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "0.6.6",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.6.6.min.js",
+      "size": 175007,
+      "hash": "75f0466bd38050fde686d7b1e61fefdd803cd00b"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "0.6.6",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-0.6.6.min.js",
+      "size": 175007,
+      "hash": "75f0466bd38050fde686d7b1e61fefdd803cd00b"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "0.6.8",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.6.8.min.js",
+      "size": 173792,
+      "hash": "774aceac4e1651f972a78356f1e8a2daf0cfcb58"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "0.6.8",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-0.6.8.min.js",
+      "size": 173792,
+      "hash": "774aceac4e1651f972a78356f1e8a2daf0cfcb58"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "0.7.0",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.7.0.min.js",
+      "size": 213832,
+      "hash": "8b22a556f18ffa19a17a0307cb876195f74cf726"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "0.7.0",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-0.7.0.min.js",
+      "size": 213832,
+      "hash": "8b22a556f18ffa19a17a0307cb876195f74cf726"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "0.7.1",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.7.1.min.js",
+      "size": 302742,
+      "hash": "aaa76343ee0335272a4649304bbab07ec443a99a"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "0.7.1",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-0.7.1.min.js",
+      "size": 302742,
+      "hash": "aaa76343ee0335272a4649304bbab07ec443a99a"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "0.7.2",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.7.2.min.js",
+      "size": 302848,
+      "hash": "1721ae8cea2a723342a2f301ccd9de144f8866d3"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "0.7.2",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-0.7.2.min.js",
+      "size": 302848,
+      "hash": "1721ae8cea2a723342a2f301ccd9de144f8866d3"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "0.7.3",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.7.3.min.js",
+      "size": 306938,
+      "hash": "774b94807fe362967d54e51b9969a801a5de2979"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "0.7.3",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-0.7.3.min.js",
+      "size": 306938,
+      "hash": "774b94807fe362967d54e51b9969a801a5de2979"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "0.7.4",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.7.4.min.js",
+      "size": 341817,
+      "hash": "7293bf96815c062070fd5d5c4384f584954caab2"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "0.7.4",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-0.7.4.min.js",
+      "size": 341817,
+      "hash": "7293bf96815c062070fd5d5c4384f584954caab2"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "0.7.5",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-0.7.5.min.js",
+      "size": 341817,
+      "hash": "f0cf13b5a6c254ef4f47bfc94968c01787579b73"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "0.7.5",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-0.7.5.min.js",
+      "size": 341817,
+      "hash": "f0cf13b5a6c254ef4f47bfc94968c01787579b73"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "test",
+    "ver": "0.7.2",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-coffee-0.7.2.min.js",
+      "size": 231365,
+      "hash": "95ff727c0e92fbe1df7543bf13d5fb611d94f5a4"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "prod",
+    "ver": "0.7.2",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-coffee-0.7.2.min.js",
+      "size": 231365,
+      "hash": "95ff727c0e92fbe1df7543bf13d5fb611d94f5a4"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "test",
+    "ver": "0.7.3",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-coffee-0.7.3.min.js",
+      "size": 235368,
+      "hash": "ff54ce6096eb5153da484be5c606d4af0541a8a6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "prod",
+    "ver": "0.7.3",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-coffee-0.7.3.min.js",
+      "size": 235368,
+      "hash": "ff54ce6096eb5153da484be5c606d4af0541a8a6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "test",
+    "ver": "0.7.4",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-coffee-0.7.4.min.js",
+      "size": 241617,
+      "hash": "18462837f0f69f3c0aee0840a03f6b7c8cd2cb6e"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "prod",
+    "ver": "0.7.4",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-coffee-0.7.4.min.js",
+      "size": 241617,
+      "hash": "18462837f0f69f3c0aee0840a03f6b7c8cd2cb6e"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "test",
+    "ver": "0.7.5",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-coffee-0.7.5.min.js",
+      "size": 241617,
+      "hash": "643feae002b652c94b6ea4b42cc3dadec6e118d8"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "prod",
+    "ver": "0.7.5",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-coffee-0.7.5.min.js",
+      "size": 241617,
+      "hash": "643feae002b652c94b6ea4b42cc3dadec6e118d8"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "test",
+    "ver": "latest",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-coffee-latest.min.js",
+      "size": 241617,
+      "hash": "18462837f0f69f3c0aee0840a03f6b7c8cd2cb6e"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "prod",
+    "ver": "latest",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-coffee-latest.min.js",
+      "size": 241617,
+      "hash": "18462837f0f69f3c0aee0840a03f6b7c8cd2cb6e"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "test",
+    "ver": "stable",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-coffee-stable.min.js",
+      "size": 235368,
+      "hash": "ff54ce6096eb5153da484be5c606d4af0541a8a6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "coffee",
+    "stage": "prod",
+    "ver": "stable",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-coffee-stable.min.js",
+      "size": 235368,
+      "hash": "ff54ce6096eb5153da484be5c606d4af0541a8a6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "test",
+    "ver": "0.7.2",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-fastfood-0.7.2.min.js",
+      "size": 270685,
+      "hash": "88167bd9ae3a135d09de0583aa0e59f5eebc7946"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "prod",
+    "ver": "0.7.2",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-fastfood-0.7.2.min.js",
+      "size": 270685,
+      "hash": "88167bd9ae3a135d09de0583aa0e59f5eebc7946"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "test",
+    "ver": "0.7.3",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-fastfood-0.7.3.min.js",
+      "size": 274617,
+      "hash": "57f1c440f5204e32580f22b7e943568873af81f0"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "prod",
+    "ver": "0.7.3",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-fastfood-0.7.3.min.js",
+      "size": 274617,
+      "hash": "57f1c440f5204e32580f22b7e943568873af81f0"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "test",
+    "ver": "0.7.4",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-fastfood-0.7.4.min.js",
+      "size": 295929,
+      "hash": "9b32d65ad262bd60868ca6d9147d524230e8fdf6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "prod",
+    "ver": "0.7.4",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-fastfood-0.7.4.min.js",
+      "size": 295929,
+      "hash": "9b32d65ad262bd60868ca6d9147d524230e8fdf6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "test",
+    "ver": "0.7.5",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-fastfood-0.7.5.min.js",
+      "size": 295929,
+      "hash": "ae31d399dd56a6c3accb7ababbcf91e65d4c013f"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "prod",
+    "ver": "0.7.5",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-fastfood-0.7.5.min.js",
+      "size": 295929,
+      "hash": "ae31d399dd56a6c3accb7ababbcf91e65d4c013f"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "test",
+    "ver": "latest",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-fastfood-latest.min.js",
+      "size": 295929,
+      "hash": "9b32d65ad262bd60868ca6d9147d524230e8fdf6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "prod",
+    "ver": "latest",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-fastfood-latest.min.js",
+      "size": 295929,
+      "hash": "9b32d65ad262bd60868ca6d9147d524230e8fdf6"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "test",
+    "ver": "stable",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-fastfood-stable.min.js",
+      "size": 274617,
+      "hash": "57f1c440f5204e32580f22b7e943568873af81f0"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "fastfood",
+    "stage": "prod",
+    "ver": "stable",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-fastfood-stable.min.js",
+      "size": 274617,
+      "hash": "57f1c440f5204e32580f22b7e943568873af81f0"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "latest",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-latest.min.js",
+      "size": 341817,
+      "hash": "7293bf96815c062070fd5d5c4384f584954caab2"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "latest",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-latest.min.js",
+      "size": 341817,
+      "hash": "7293bf96815c062070fd5d5c4384f584954caab2"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "stable",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt-jssdk-stable.min.js",
+      "size": 306938,
+      "hash": "774b94807fe362967d54e51b9969a801a5de2979"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "stable",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt-jssdk-stable.min.js",
+      "size": 306938,
+      "hash": "774b94807fe362967d54e51b9969a801a5de2979"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "test",
+    "ver": "dev",
+    "data": {
+      "url": "https://mmo.downtown8.cn/docs/d/jssdk/mkt.dev.js",
+      "size": 1120440,
+      "hash": "89046a275531dbd4dc293acc3503a3517e285a55"
+    }
+  },
+  {
+    "appId": "mkt",
+    "output": "jssdk",
+    "biz": "all",
+    "stage": "prod",
+    "ver": "dev",
+    "data": {
+      "url": "https://mmo.eshine.cn/docs/d/jssdk/mkt.dev.js",
+      "size": 1120440,
+      "hash": "89046a275531dbd4dc293acc3503a3517e285a55"
+    }
+  }
+]
