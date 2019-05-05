@@ -3,7 +3,7 @@ package vchecker
 import (
 	"fmt"
 	"sync"
-	"github.com/zppro/vchecker/internal/pkg/shared"
+	"github.com/zppro/vchecker/internals/pkg/shared"
 )
 
 type FilterCache struct {
