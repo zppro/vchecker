@@ -28,6 +28,13 @@ func (fc *FilterCache) Set(key string, value *shared.AppVer) {
 	fc.cache[key] = value
 }
 
+func (fc *FilterCache) Clear() (value *shared.AppVer, ok bool) {
+	fc.mu.RLock()
+	fc.cache = make(map[string] *shared.AppVer)
+	fc.mu.RUnlock()
+	return
+}
+
 func (fc *FilterCache) toString () {
 	fmt.Sprintf("%v", fc)
 }
