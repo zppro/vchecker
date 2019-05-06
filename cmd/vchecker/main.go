@@ -185,18 +185,16 @@ func handleGenerate(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	log.Printf("拷贝完成!\n" )
-
+	cache.Clear()
 	readAppVersFromFile()
 	//w.Header().Set("Content-Type", "application/json;charset=UTF-8")
 	w.Write([]byte("ok"))
 }
 
 
-
 func handleCheck(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
-		w.WriteHeader(405)
-		fmt.Fprint(w, "need GET")
+		http.Error(w, "need POST", 405)
 		return
 	}
 	appId := r.URL.Query().Get("appId")
@@ -206,9 +204,10 @@ func handleCheck(w http.ResponseWriter, r *http.Request) {
 	var appVersions = appVerMap[appId]
 	if len(appVersions) == 0 {
 		w.WriteHeader(400)
-		fmt.Fprint(w, "无效的appId")
+		http.Error(w, "无效的appId", 400)
 		return
 	}
+	hash := r.URL.Query().Get("hash")
 	biz := r.URL.Query().Get("biz")
 	if biz == "" {
 		biz = "all"
@@ -236,7 +235,12 @@ func handleCheck(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	toJson(w, value)
+	w.Header().Set("Content-Type", "application/json;charset=UTF-8")
+ 	if hash == value.Data.Hash {
+		w.Write([]byte("{}"))
+	} else {
+		toJson(w, value)
+	}
 }
 
 func toJson (w http.ResponseWriter, item *shared.AppVer) {
@@ -246,9 +250,9 @@ func toJson (w http.ResponseWriter, item *shared.AppVer) {
 	}
 	data, err := json.Marshal(item)
 	if err != nil {
-		log.Printf("JSON marshaling faild: %s\n", err)
+		http.Error(w, fmt.Sprintf("JSON marshaling faild: %s\n", err), 400)
+		return
 	}
-	w.Header().Set("Content-Type", "application/json;charset=UTF-8")
 	w.Write(data)
 }
 
