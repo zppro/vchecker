@@ -4,6 +4,7 @@ type AppVerData struct {
 	Url   string `json:"url"`
 	Size  int64 `json:"size"`
 	Hash  string `json:"hash"`
+	Modified int64 `json:"modified"`
 }
 
 type AppVer struct {

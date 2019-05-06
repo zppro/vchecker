@@ -22,7 +22,7 @@ func main() {
 	fileExtInfos := file.GetAllFileExtInfo(path, patterns)
 	var appVerMap = make(map[string]shared.AppVersions, 2)
 	for _, v := range fileExtInfos {
-		filename, size, hash := v.Name(), v.FI.Size(), v.Hash()
+		filename, size, hash, modified := v.Name(), v.FI.Size(), v.Hash(), v.FI.ModTime().UnixNano() / 1e6
 		//fmt.Printf("%v\n", filename)
 		parts := strings.Split(v.Reg.ReplaceAllString(filename, "$1"), "-")
 		var appId, output, biz, ver string
@@ -55,6 +55,7 @@ func main() {
 						Url: stage.GetResourceUrl(output, filename),
 						Size: size,
 						Hash: hash,
+						Modified: modified,
 					},
 				})
 			}

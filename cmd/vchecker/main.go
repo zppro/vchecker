@@ -263,7 +263,6 @@ func readAppVersFromFile() {
 			log.Fatalf("读取文件%s faild: %s", filename, err)
 			return
 		}
-
 		var ptr = new(shared.AppVersions)
 		//读取的数据为json格式，需要进行解码
 		err = json.Unmarshal(data, ptr)
