@@ -107,7 +107,7 @@ func handleGenerate(w http.ResponseWriter, r *http.Request) {
 			written := 0
 			for {
 				nr, er := reader.Read(buff)
-				log.Printf("read buff:%d, %v\n", nr, er)
+				//log.Printf("read buff:%d, %v\n", nr, er)
 				if nr > 0 {
 					nw, ew := writer.Write(buff[0:nr])
 					if nw > 0 {
@@ -129,7 +129,7 @@ func handleGenerate(w http.ResponseWriter, r *http.Request) {
 					break
 				}
 			}
-			log.Printf("for end writed: %d %v\n", written, err)
+			//log.Printf("for end writed: %d %v\n", written, err)
 
 			if err != nil {
 				http.Error(w, err.Error(), 400)
@@ -155,9 +155,25 @@ func handleGenerate(w http.ResponseWriter, r *http.Request) {
 	}
 	for _, v := range fileExtInfos {
 		source := v.FullName()
+
+		// 拷贝保护，预先检测下载文件是否可用
+		data, err := ioutil.ReadFile(source)
+		if err != nil {
+			http.Error(w, err.Error(), 400)
+			return
+		}
+		var ptr = new(shared.AppVersions)
+		//读取的数据为json格式，需要进行解码
+		err = json.Unmarshal(data, ptr)
+		if err != nil {
+			http.Error(w, err.Error(), 400)
+			return
+		}
+		// 能够解码证明文件没有问题，可以拷贝
+		log.Println("【验证】能够解码证明文件没有问题，可以拷贝!")
 		dest := destPath + v.Name()
 		log.Printf("【拷贝】从%s到%s!\n", source, dest)
-		_ , err := file.CopyFile(source, dest)
+		_ , err = file.CopyFile(source, dest)
 		if err != nil {
 			http.Error(w, err.Error(), 400)
 			return
@@ -169,12 +185,10 @@ func handleGenerate(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	log.Printf("拷贝完成!\n" )
-	w.Header().Set("Content-Type", "application/json;charset=UTF-8")
-	json.NewEncoder(w).Encode(p.AppIds)
 
-
-	//var done = make(chan struct{})
-	//downloadAppVerFiles
+	readAppVersFromFile()
+	//w.Header().Set("Content-Type", "application/json;charset=UTF-8")
+	w.Write([]byte("ok"))
 }
 
 
